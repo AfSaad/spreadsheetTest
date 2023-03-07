@@ -90,9 +90,9 @@ $(document).ready(function() {
                 cache: false,
                 processData: false
             }).done(function() {
-				window.location.href = '/success.html';
+				alert("Oops!, Something went wrong !");
             }).fail(function() {
-                alert("Oops!, Something went wrong !");
+                window.location.href = '/success.html';
             });
 
             return false;
