@@ -92,7 +92,7 @@ $(document).ready(function() {
             }).done(function() {
 				window.location.href = '/success.html';
             }).fail(function() {
-                alert("Oops!, Something went wrong !")
+                alert("Oops!, Something went wrong !");
             });
 
             return false;
