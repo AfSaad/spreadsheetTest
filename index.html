@@ -35,7 +35,7 @@
                   </div>
                   <p class="arabic-font">سينتهي التخفيض خلال</p>
                </div>
-               <form>
+               <form name="submit-to-google-sheet">
                   <div class="form-control">
                      <input name="name" type="text" placeholder="الاسم الكامل"/>
                   </div>
@@ -134,6 +134,17 @@
          <script src="js/countdown.js"></script>
          <script src="js/scripts.js"></script>
       </div>
+      <script>
+         const scriptURL = 'https://script.google.com/macros/s/AKfycbzB5LogBeACvg4Q-Cq4gYNMk7gYw3jinLcIFiJ6i6uQcyTgU4-f7eGSOZjEIyRTTgYZoA/exec'
+         const form = document.forms['submit-to-google-sheet']
+
+        form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+         })
+      </script>
    </body>
 </html>
 
